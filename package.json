@@ -1,9 +1,11 @@
 {
   "scripts": {
+    "app-demo": "webpack serve --open --config build/app-demo.js",
     "dist": "webpack --config build/dist.js"
   },
   "peerDependencies": {
-    "react": ">=18.0.0"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -20,6 +22,7 @@
     "stylus": "^0.59.0",
     "stylus-loader": "^7.1.0",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   }
 }

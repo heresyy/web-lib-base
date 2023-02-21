@@ -1,4 +1,5 @@
 const path = require('path')
+const babelLoader = require('babel-loader')
 
 module.exports = {
   mode: 'production',
@@ -17,19 +18,8 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: [
-              'transform-react-pug',
-              'transform-react-jsx'
-            ],
-            presets: [
-              ['@babel/preset-env'],
-              ['@babel/preset-react']
-            ]
-          }
-        }
+        exclude: /(node_modules)/,
+        use: babelLoader
       }
     ]
   }

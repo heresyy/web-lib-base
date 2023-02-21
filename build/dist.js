@@ -1,12 +1,14 @@
 const path = require('path')
-const babelLoader = require('babel-loader')
+
+const { coffeeRule, stylusRule } = require('.')
 
 module.exports = {
   mode: 'production',
   watch: true,
-  entry: './src/index.js',
+  entry: './src/index.coffee',
   output: {
     path: path.resolve(__dirname, '../dist'),
+    clean: true,
     library: {
       name: '[XXX]',
       type: 'umd'
@@ -16,11 +18,8 @@ module.exports = {
   externals: ['lodash', 'react'],
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: babelLoader
-      }
+      coffeeRule,
+      stylusRule
     ]
   }
 }
